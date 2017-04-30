@@ -4,7 +4,7 @@ threads threads_count, threads_count
 if ENV['SOCKET'] then
   bind 'unix://' + ENV['SOCKET']
 else
-  port ENV.fetch('PORT') { 3000 }
+  port ENV.fetch('PORT') { 3168 }
 end
 
 environment ENV.fetch('RAILS_ENV') { 'development' }

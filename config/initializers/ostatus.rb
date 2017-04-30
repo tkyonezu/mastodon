@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-port  = ENV.fetch('PORT') { 3000 }
+port  = ENV.fetch('PORT') { 3168 }
 host  = ENV.fetch('LOCAL_DOMAIN') { "localhost:#{port}" }
 web_host = ENV.fetch('WEB_DOMAIN') { host }
 https = ENV['LOCAL_HTTPS'] == 'true'

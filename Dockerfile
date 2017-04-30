@@ -6,7 +6,7 @@ LABEL maintainer="https://github.com/tootsuite/mastodon" \
 ENV RAILS_ENV=production \
     NODE_ENV=production
 
-EXPOSE 3000 4000
+EXPOSE 3168 4000
 
 WORKDIR /mastodon
 

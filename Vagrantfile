@@ -12,8 +12,8 @@ sudo apt-add-repository 'deb https://dl.yarnpkg.com/debian/ stable main'
 # Add repo for NodeJS
 curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
 
-# Add firewall rule to redirect 80 to 3000 and save
-sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+# Add firewall rule to redirect 80 to 3168 and save
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3168
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
 sudo apt-get install iptables-persistent -y
@@ -104,8 +104,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.synced_folder ".", "/vagrant"
   end
 
-  # Otherwise, you can access the site at http://localhost:3000
-  config.vm.network :forwarded_port, guest: 80, host: 3000
+  # Otherwise, you can access the site at http://localhost:3168
+  config.vm.network :forwarded_port, guest: 80, host: 3168
 
   # Full provisioning script, only runs on first 'vagrant up' or with 'vagrant provision'
   config.vm.provision :shell, inline: $provision, privileged: false
